@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="yes_style.css"> 
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #F8C8DC;
+        }
+
+        #noButton {
+            position: absolute;
+            margin-left: 150px;
+            transition: 0.5s;
+        }
+
+        #yesButton {
+            position: absolute;
+            margin-right: 150px;
+        }
+
+        .header_text {
+            font-family: 'Nunito';
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 0px;
+        }
+
+        .text {
+            font-family: 'Nunito';
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 0px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        .btn {
+            background-color: #f07b8d;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #FAF9F6;
+        }
+
+        .gif_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text">Hi Bossing hehe! would you like to go out with me? yii</h1>
+        </div>
+        <div class="gif_container">
+            <img id="gifImage" src="https://storage.googleapis.com/sticker-prod/DCeWKEM9444JG2gUXrF2/3-1.png">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+        </div>
+    </div>
+    <script>
+        function nextPage() {
+            window.location.href = "yes_index.html";
+            window.open("yes_index.html");
+        }
+
+        function moveButton() {
+            var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+            var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+            document.getElementById('noButton').style.left = x + 'px';
+            document.getElementById('noButton').style.top = y + 'px';
+            document.getElementById('gifImage').src = "https://storage.googleapis.com/sticker-prod/DCeWKEM9444JG2gUXrF2/14-1.png";
+        }
+    </script>
+</body>
+</html>
